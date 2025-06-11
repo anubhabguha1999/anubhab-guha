@@ -154,6 +154,8 @@ const Works = () => {
           and manage projects effectively.
         </motion.p>
       </div>
+      
+
       <div style={{ height: "700px", position: "relative", marginTop: "20px" }}>
         <InfiniteMenu items={items} />
       </div>
