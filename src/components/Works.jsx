@@ -109,7 +109,7 @@ const Works = () => {
     },
     {
       image: getImageUrl("projects/crypto.png"),
-      link: "https://github.com/anubhabguha1999/CryptoExchange",
+      link: "https://anubhabguha1999.github.io/CryptoExchange/#",
       title: "Crypto Exchange",
       description:
         "Crypto Exchange is a project that allows you to exchange cryptocurrencies.",
