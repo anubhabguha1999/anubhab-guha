@@ -1,8 +1,9 @@
-import  { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
+import ResumePDF from "../assets/resume.pdf";
 
 const Contact = () => {
   return (
@@ -13,6 +14,16 @@ const Contact = () => {
       >
         <p className={styles.sectionSubText}>Get in touch</p>
         <h3 className={styles.sectionHeadText}>Contact.</h3>
+        <div className="flex items-center gap-2">
+          <span className="font-semibold text-lg">Resume</span>
+          <a
+            href={ResumePDF}
+            download="Anubhab_Guha_Resume.pdf"
+            className="text-blue-400 hover:text-blue-300 underline transition"
+          >
+            Download
+          </a>
+        </div>
 
         <div className="mt-12 flex flex-col gap-6 text-white">
           {/* Email */}
