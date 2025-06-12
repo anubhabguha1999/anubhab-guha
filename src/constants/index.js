@@ -172,21 +172,21 @@ const experiences = [
 const testimonials = [
   {
     testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
+      "I thought it was impossible to make a website as beautiful as our product, but Anubhab proved me wrong.",
     name: "Mailarappa Budhihal",
     designation: "Software Developer",
     company: "SoftSensor.ai",
   },
   {
     testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
+      "I've never met a web developer who truly cares about their clients' success like Anubhab does.",
     name: "Manish Rawat",
     designation: "Software Developer",
     company: "SoftSensor.ai",
   },
   {
     testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
+      "After Anubhab optimized our website, our traffic increased by 50%. We can't thank them enough!",
     name: "Ayush Aryan",
     designation: "Software Developer",
     company: "TCS",
