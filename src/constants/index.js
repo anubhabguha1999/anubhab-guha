@@ -135,10 +135,10 @@ const experiences = [
     iconBg: "#E6DEDD",
     date: "June 2023 - Present",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Designed, developed, and maintained scalable full stack web applications for a Delivery Management System using React.js, Node.js, and related technologies.",
+      "Collaborated closely with designers, product managers, and cross-functional engineering teams to deliver high-quality, end-to-end product features.",
+      "Implemented responsive and user-centric UI designs while ensuring seamless performance and cross-browser compatibility.",
+      "Conducted thorough code reviews, shared best practices, and mentored team members to maintain code quality and system reliability.",
     ],
   },
   // {
