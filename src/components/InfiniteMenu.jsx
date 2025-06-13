@@ -834,10 +834,13 @@ const defaultItems = [
   }
 ];
 
+
 export default function InfiniteMenu({ items = [] }) {
   const canvasRef = useRef(null);
+  const containerRef = useRef(null);
   const [activeItem, setActiveItem] = useState(null);
   const [isMoving, setIsMoving] = useState(false);
+  const [isFullscreen, setIsFullscreen] = useState(false);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -880,12 +883,46 @@ export default function InfiniteMenu({ items = [] }) {
       console.log('Internal route:', activeItem.link);
     }
   };
+
+  const toggleFullscreen = () => {
+    const elem = containerRef.current;
+    if (!elem) return;
+
+    if (!document.fullscreenElement) {
+      elem.requestFullscreen().then(() => setIsFullscreen(true));
+    } else {
+      document.exitFullscreen().then(() => setIsFullscreen(false));
+    }
+  };
+
   return (
-    <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+    <div
+      ref={containerRef}
+      style={{ position: 'relative', width: '100%', height: '100%' }}
+    >
       <canvas
         id="infinite-grid-menu-canvas"
         ref={canvasRef}
       />
+
+      <button
+        onClick={toggleFullscreen}
+        style={{
+          position: 'absolute',
+          top: 16,
+          right: 16,
+          zIndex: 1000,
+          padding: '8px 12px',
+          background: 'rgba(0, 0, 0, 0.5)',
+          color: '#fff',
+          border: 'none',
+          borderRadius: '4px',
+          cursor: 'pointer',
+        }}
+      >
+        {isFullscreen ? '🗗' : '⛶'}
+
+      </button>
 
       {activeItem && (
         <>
@@ -893,14 +930,19 @@ export default function InfiniteMenu({ items = [] }) {
             {activeItem.title}
           </h2>
 
-          <p className={`face-description ${isMoving ? 'inactive' : 'active'}`}> {activeItem.description}</p>
+          <p className={`face-description ${isMoving ? 'inactive' : 'active'}`}>
+            {activeItem.description}
+          </p>
 
-          <div onClick={handleButtonClick} className={`action-button ${isMoving ? 'inactive' : 'active'}`}>
+          <div
+            onClick={handleButtonClick}
+            className={`action-button ${isMoving ? 'inactive' : 'active'}`}
+          >
             <p className="action-button-icon">&#x2197;</p>
           </div>
         </>
-      )
-      }
-    </div >
+      )}
+    </div>
   );
 }
+
