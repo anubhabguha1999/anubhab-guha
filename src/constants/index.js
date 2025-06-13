@@ -186,7 +186,7 @@ const testimonials = [
   },
   {
     testimonial:
-      "After Anubhab optimized our website, our traffic increased by 50%. We can't thank them enough!",
+      "After Anubhab worked his magic on our website, we saw a 43% jump in traffic! His insights and optimizations made a huge difference. Honestly, we couldn’t be more grateful.",
     name: "Ayush Aryan",
     designation: "Software Developer",
     company: "TCS",
