@@ -24,7 +24,7 @@ import {
   tripguide,
   threejs,
 } from "../assets";
-
+import { getImageUrl } from "../components/Works";
 export const navLinks = [
   {
     id: "about",
@@ -195,68 +195,36 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Car Rent",
-    description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+    name: "Weather App",
+    description: "Weather app that can say the weather of your location",
     tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "mongodb",
-        color: "green-text-gradient",
-      },
-      {
-        name: "tailwind",
-        color: "pink-text-gradient",
-      },
+      { name: "react", color: "blue-text-gradient" },
+      { name: "tailwind", color: "pink-text-gradient" },
     ],
-    image: carrent,
-    source_code_link: "https://github.com/",
+    image: getImageUrl("projects/project.png"),
+    source_code_link: "https://github.com/anubhabguha1999/Weather-app",
   },
   {
-    name: "Job IT",
-    description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+    name: "REDEFINE",
+    description: "Refefine is a game that is made using React + Vite.",
     tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "restapi",
-        color: "green-text-gradient",
-      },
-      {
-        name: "scss",
-        color: "pink-text-gradient",
-      },
+      { name: "react", color: "blue-text-gradient" },
+      { name: "vite", color: "green-text-gradient" },
     ],
-    image: jobit,
-    source_code_link: "https://github.com/",
+    image: getImageUrl("projects/game.jpg"),
+    source_code_link: "https://redefine-anubhab-guha.netlify.app/",
   },
   {
-    name: "Trip Guide",
-    description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+    name: "Speech Emotion Recognition",
+    description: "Speech Emotion Recognition is a project that can detect the emotion of a person based on their speech",
     tags: [
-      {
-        name: "nextjs",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "supabase",
-        color: "green-text-gradient",
-      },
-      {
-        name: "css",
-        color: "pink-text-gradient",
-      },
+      { name: "python", color: "green-text-gradient" },
+      { name: "ml", color: "pink-text-gradient" },
     ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
+    image: getImageUrl("projects/project2.jpg"),
+    source_code_link: "https://github.com/anubhabguha1999/Speech-Emotion-Recognition",
   },
 ];
+
 
 export { services, technologies, experiences, testimonials, projects };
