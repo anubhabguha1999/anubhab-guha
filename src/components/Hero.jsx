@@ -87,7 +87,7 @@ const Hero = () => {
       </div>
       {renderContent()}
       {isMobile && !isIPhone && (
-        <div className="absolute bottom-[9rem] w-full flex justify-center items-center">
+        <div className="absolute bottom-10 w-full flex justify-center items-center">
           <ProfileCard
             name="Anubhab Guha"
             title="Software Developer"
