@@ -30,6 +30,9 @@ import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 
+import manish from "./../assets/manish.jpeg";
+import mailarappa from "./../assets/mailarappa.jpeg";
+import ayush from "./../assets/ayush.jpeg";
 export {
   logo,
   backend,
@@ -59,4 +62,7 @@ export {
   carrent,
   jobit,
   tripguide,
+  manish,
+  mailarappa,
+  ayush,
 };

@@ -8,7 +8,7 @@ import { i } from "maath/dist/index-43782085.esm";
 import ProfileCard from "./ProfileCard";
 import profile from "../assets/projects/profile.png";
 
-const Hero = () => {
+const Hero = ({ showCard }) => {
   const [isMobile, setIsMobile] = useState(false);
   const [isIPhone, setIsIPhone] = useState(false);
 
@@ -31,7 +31,31 @@ const Hero = () => {
       mediaQuery.removeEventListener("change", handleMediaQueryChange);
     };
   }, []);
+
+  const card = (
+    <div className="absolute bottom-10 w-full flex justify-center items-center">
+      <ProfileCard
+        name="Anubhab Guha"
+        title="Software Developer"
+        handle="anubhab_guha"
+        avatarUrl={profile}
+        onContactClick={() => {
+          if (window.location.hash === "#contact") {
+            history.replaceState(
+              null,
+              "",
+              window.location.pathname + window.location.search
+            );
+          }
+          setTimeout(() => {
+            window.location.hash = "contact";
+          }, 0);
+        }}
+      />
+    </div>
+  );
   const iPhone = () => {
+    if (showCard) return card;
     return (
       <>
         <ComputersCanvas />
@@ -64,6 +88,10 @@ const Hero = () => {
       } else return null;
     } else return iPhone();
   };
+  const showDetails = ()=>{
+    if (isIPhone) return true
+    return !showCard;
+  }
   return (
     <section className={`relative w-full h-screen mx-auto`}>
       <div
@@ -78,40 +106,18 @@ const Hero = () => {
           <h1 className={`${styles.heroHeadText} text-white`}>
             Hi, I'm <span className="text-[#915EFF]">Anubhab</span>
           </h1>
+          {showDetails() && 
           <p className={`${styles.heroSubText} mt-2 text-white-100 mb-4`}>
             I'm a full-stack developer with 2+ years experience{" "}
             <br className="sm:block hidden" />
-            of using Full Stack Development. Reach out if you'd like to know more.
+            of using Full Stack Development. Reach out if you'd like to know
+            more.
           </p>
+          }
         </div>
       </div>
       {renderContent()}
-      {isMobile && !isIPhone && (
-        <div className="absolute bottom-10 w-full flex justify-center items-center">
-          <ProfileCard
-            name="Anubhab Guha"
-            title="Software Developer"
-            handle="anubhab_guha"
-            status="Online"
-            contactText="Contact Me"
-            avatarUrl={profile}
-            showUserInfo={true}
-            enableTilt={true}
-            onContactClick={() => {
-              if (window.location.hash === "#contact") {
-                history.replaceState(
-                  null,
-                  "",
-                  window.location.pathname + window.location.search
-                );
-              }
-              setTimeout(() => {
-                window.location.hash = "contact";
-              }, 0);
-            }}
-          />
-        </div>
-      )}
+      {isMobile && !isIPhone && card}
     </section>
   );
 };
