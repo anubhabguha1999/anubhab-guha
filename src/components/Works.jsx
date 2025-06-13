@@ -170,7 +170,7 @@ const Works = () => {
   const iPhone = () => {
     return (
       <div style={{ height: "700px", position: "relative", marginTop: "20px" }}>
-        <InfiniteMenu items={items} />
+        <InfiniteMenu items={items} isMobile={isMobile}/>
       </div>
     );
   };
