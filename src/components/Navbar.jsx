@@ -52,7 +52,6 @@ const Navbar = ({ showCard, setShowCard }) => {
       return true;
     } else return false;
   };
-  console.log(logic());
   const value = logic();
   return (
     <nav
@@ -90,14 +89,14 @@ const Navbar = ({ showCard, setShowCard }) => {
               <a href={`#${nav.id}`}>{nav.title}</a>
             </li>
           ))}
-            <li
-              className={`${
-                showCard ? "text-white" : "text-secondary"
-              } hover:text-white text-[18px] font-medium cursor-pointer`}
-              onClick={() => setShowCard(!showCard)}
-            >
-              {showCard ? "Hide Card" : "Show Card"}
-            </li>
+          <li
+            className={`${
+              showCard ? "text-white" : "text-secondary"
+            } hover:text-white text-[18px] font-medium cursor-pointer`}
+            onClick={() => setShowCard(!showCard)}
+          >
+            {showCard ? "Hide Card" : "Show Card"}
+          </li>
         </ul>
 
         <div className="sm:hidden flex flex-1 justify-end items-center">
@@ -133,7 +132,10 @@ const Navbar = ({ showCard, setShowCard }) => {
                   className={`${
                     showCard ? "text-white" : "text-secondary"
                   } font-poppins font-medium cursor-pointer text-[16px]`}
-                  onClick={() => setShowCard(!showCard)}
+                  onClick={() => {
+                    setShowCard(!showCard);
+                    setToggle(!toggle);
+                  }}
                 >
                   {showCard ? "Hide Card" : "Show Card"}
                 </li>

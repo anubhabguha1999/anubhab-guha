@@ -11,7 +11,10 @@ import profile from "../assets/projects/profile.png";
 const Hero = ({ showCard }) => {
   const [isMobile, setIsMobile] = useState(false);
   const [isIPhone, setIsIPhone] = useState(false);
-
+ const showDetails = ()=>{
+    if (isIPhone) return true
+    return !showCard;
+  }
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 768px)");
     setIsMobile(mediaQuery.matches);
@@ -33,7 +36,7 @@ const Hero = ({ showCard }) => {
   }, []);
 
   const card = (
-    <div className="absolute bottom-10 w-full flex justify-center items-center">
+    <div className={`absolute ${!showDetails() ? 'bottom-[15%]' : 'bottom-10'} w-full flex justify-center items-center`}>
       <ProfileCard
         name="Anubhab Guha"
         title="Software Developer"
@@ -88,12 +91,10 @@ const Hero = ({ showCard }) => {
       } else return null;
     } else return iPhone();
   };
-  const showDetails = ()=>{
-    if (isIPhone) return true
-    return !showCard;
-  }
+ 
   return (
     <section className={`relative w-full h-screen mx-auto`}>
+      {showDetails() && 
       <div
         className={`absolute inset-0 top-[80px]  max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
       >
@@ -106,16 +107,15 @@ const Hero = ({ showCard }) => {
           <h1 className={`${styles.heroHeadText} text-white`}>
             Hi, I'm <span className="text-[#915EFF]">Anubhab</span>
           </h1>
-          {showDetails() && 
           <p className={`${styles.heroSubText} mt-2 text-white-100 mb-4`}>
             I'm a full-stack developer with 2+ years experience{" "}
             <br className="sm:block hidden" />
             of using Full Stack Development. Reach out if you'd like to know
             more.
           </p>
-          }
         </div>
       </div>
+          }
       {renderContent()}
       {isMobile && !isIPhone && card}
     </section>
