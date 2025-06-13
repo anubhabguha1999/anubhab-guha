@@ -17,40 +17,44 @@ const FeedbackCard = ({
 }) => (
   <motion.div
     variants={fadeIn("", "spring", index * 0.5, 0.75)}
-    className='bg-black-200 rounded-3xl xs:w-[290px] w-full'
+    className="bg-black-200 rounded-3xl xs:w-[290px] w-full"
   >
-    <SpotlightCard className="custom-spotlight-card h-full border-white bg-black-200" spotlightColor="rgba(0, 166, 255, 0.81)">
+    <SpotlightCard
+      className="custom-spotlight-card h-full border-white bg-black-200"
+      spotlightColor="rgba(0, 166, 255, 0.81)"
+    >
+      <p className="text-white font-black text-[48px]">"</p>
 
-    <p className='text-white font-black text-[48px]'>"</p>
+      <div className="mt-1 h-[80%] flex flex-col justify-between ">
+        <p className="text-white tracking-wider text-[18px]">{testimonial}</p>
 
-    <div className='mt-1'>
-      <p className='text-white tracking-wider text-[18px]'>{testimonial}</p>
+        <div className="mt-7 flex justify-between items-center gap-1">
+          <div className="flex-1 flex flex-col">
+            <p className="text-white font-medium text-[16px]">
+              <span className="blue-text-gradient">@</span> {name}
+            </p>
+            <p className="mt-1 text-secondary text-[12px]">
+              {designation} of {company}
+            </p>
+          </div>
 
-      <div className='mt-7 flex justify-between items-center gap-1'>
-        <div className='flex-1 flex flex-col'>
-          <p className='text-white font-medium text-[16px]'>
-            <span className='blue-text-gradient'>@</span> {name}
-          </p>
-          <p className='mt-1 text-secondary text-[12px]'>
-            {designation} of {company}
-          </p>
-        </div>
-
-        <img
-          src={image}
-          alt={`feedback_by-${name}`}
-          className='w-10 h-10 rounded-full object-cover'
+          <img
+            src={image}
+            alt={`feedback_by-${name}`}
+            className="w-10 h-10 rounded-full object-cover"
           />
+        </div>
       </div>
-    </div>
-          </SpotlightCard>
+    </SpotlightCard>
   </motion.div>
 );
 
 const Feedbacks = () => {
   return (
-    
-      <SpotlightCard className="custom-spotlight-card mt-12 bg-black-100 rounded-[20px]" spotlightColor="rgba(255, 0, 144, 0.46)">
+    <SpotlightCard
+      className="custom-spotlight-card mt-12 bg-black-100 rounded-[20px]"
+      spotlightColor="rgba(255, 0, 144, 0.46)"
+    >
       <div
         className={`bg-tertiary rounded-2xl ${styles.padding} min-h-[300px]`}
       >
@@ -64,7 +68,7 @@ const Feedbacks = () => {
           <FeedbackCard key={testimonial.name} index={index} {...testimonial} />
         ))}
       </div>
-        </SpotlightCard>
+    </SpotlightCard>
   );
 };
 
