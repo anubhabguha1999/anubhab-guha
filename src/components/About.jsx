@@ -6,6 +6,7 @@ import { styles } from "../styles";
 import { services } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
+import SpotlightCard from "./SpotlightCard";
 
 const ServiceCard = ({ index, title, icon }) => (
   <Tilt className='xs:w-[250px] w-full'>
@@ -13,14 +14,15 @@ const ServiceCard = ({ index, title, icon }) => (
       variants={fadeIn("right", "spring", index * 0.5, 0.75)}
       className='w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card'
     >
+      <SpotlightCard className="custom-spotlight-card" spotlightColor="rgb(137, 0, 187)">
       <div
         options={{
           max: 45,
           scale: 1,
           speed: 450,
         }}
-        className='bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col'
-      >
+        className=' rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col'
+        >
         <img
           src={icon}
           alt='web-development'
@@ -31,6 +33,7 @@ const ServiceCard = ({ index, title, icon }) => (
           {title}
         </h3>
       </div>
+          </SpotlightCard>
     </motion.div>
   </Tilt>
 );

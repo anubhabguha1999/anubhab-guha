@@ -4,14 +4,16 @@ import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 import ResumePDF from "../assets/resume.pdf";
+import SpotlightCard from "./SpotlightCard";
 
 const Contact = () => {
   return (
     <div className="xl:mt-12 flex  flex-col-reverse gap-10 overflow-hidden">
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
-        className="flex-[0.75] bg-black-100 p-8 rounded-2xl shadow-lg border border-gray-700"
-      >
+        className="flex-[0.75] bg-black-100  rounded-2xl shadow-lg border border-gray-700"
+        >
+      <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(0, 166, 255, 0.25)">
         <p className={styles.sectionSubText}>Get in touch</p>
         <h3 className={styles.sectionHeadText}>Contact.</h3>
         <div className="flex items-center gap-2">
@@ -19,8 +21,8 @@ const Contact = () => {
           <a
             href={ResumePDF}
             download="Anubhab_Guha_Resume.pdf"
-            className="text-blue-400 hover:text-blue-300 underline transition"
-          >
+            className="text-blue-400 hover:text-white underline transition"
+            >
             Download
           </a>
         </div>
@@ -32,7 +34,7 @@ const Contact = () => {
             <a
               href="mailto:anubhabguha1999@gmail.com"
               className="text-blue-400 hover:text-blue-300 underline transition"
-            >
+              >
               anubhabguha1999@gmail.com
             </a>
           </div>
@@ -45,7 +47,7 @@ const Contact = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-400 hover:text-blue-300 underline transition"
-            >
+              >
               linkedin.com/in/anubhab-guha-478967201/
             </a>
           </div>
@@ -58,11 +60,12 @@ const Contact = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-400 hover:text-blue-300 underline transition"
-            >
+              >
               github.com/anubhabguha1999
             </a>
           </div>
         </div>
+              </SpotlightCard>
       </motion.div>
     </div>
   );
