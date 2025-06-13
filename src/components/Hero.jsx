@@ -33,7 +33,6 @@ const Hero = () => {
     return (
       <>
         <ComputersCanvas />
-        <div className="hidden sm:block">
           <div className="absolute bottom-10 w-full flex justify-center items-center">
             <a href="#about">
               <div className="w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2">
@@ -50,7 +49,6 @@ const Hero = () => {
                 />
               </div>
             </a>
-          </div>
         </div>
       </>
     );
@@ -82,43 +80,44 @@ const Hero = () => {
             of using Full Stack Development.
           </p>
           {isMobile && !isIPhone && (
-
-          <ul className="list-disc list-inside space-y-2 text-white text-sm sm:text-base font-medium mt-6">
-  <li>
-    🚀 Building seamless full-stack experiences — from beautiful
-    frontends to powerful backends.
-  </li>
-  <li>
-    ⚙️ Turning ideas into scalable, maintainable products with React,
-    Node.js, and modern web technologies.
-  </li>
-  <li>
-    💡 Passionate about performance, clean architecture, and
-    delightful user experiences.
-  </li>
-  <li>
-    🧠 Always learning — exploring emerging tools and frameworks to
-    stay ahead in the tech curve.
-  </li>
-  <li>
-    🤝 Collaborating closely with teams to deliver high-quality
-    software that solves real problems.
-  </li>
-  <li>
-    📦 Writing reusable, testable, and efficient code with a focus on
-    long-term maintainability.
-  </li>
-  <li>
-    🧰 Skilled in debugging and optimizing applications for performance and scalability.
-  </li>
-  <li>
-    🎯 Focused on delivering pixel-perfect UI and intuitive UX across devices.
-  </li>
-  <li>
-    🔐 Emphasizing security best practices in every layer of the stack.
-  </li>
-</ul>
-
+            <ul className="list-disc list-inside space-y-2 text-white text-sm sm:text-base font-medium mt-6">
+              <li>
+                🚀 Building seamless full-stack experiences — from beautiful
+                frontends to powerful backends.
+              </li>
+              <li>
+                ⚙️ Turning ideas into scalable, maintainable products with
+                React, Node.js, and modern web technologies.
+              </li>
+              <li>
+                💡 Passionate about performance, clean architecture, and
+                delightful user experiences.
+              </li>
+              <li>
+                🧠 Always learning — exploring emerging tools and frameworks to
+                stay ahead in the tech curve.
+              </li>
+              <li>
+                🤝 Collaborating closely with teams to deliver high-quality
+                software that solves real problems.
+              </li>
+              <li>
+                📦 Writing reusable, testable, and efficient code with a focus
+                on long-term maintainability.
+              </li>
+              <li>
+                🧰 Skilled in debugging and optimizing applications for
+                performance and scalability.
+              </li>
+              <li>
+                🎯 Focused on delivering pixel-perfect UI and intuitive UX
+                across devices.
+              </li>
+              <li>
+                🔐 Emphasizing security best practices in every layer of the
+                stack.
+              </li>
+            </ul>
           )}
         </div>
       </div>
