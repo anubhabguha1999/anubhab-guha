@@ -36,7 +36,7 @@ const Hero = ({ showCard }) => {
   }, []);
 
   const card = (
-    <div className={`absolute ${!showDetails() ? 'bottom-[15%]' : 'bottom-10'} w-full flex justify-center items-center`}>
+    <div className={`absolute ${!showDetails() ? 'bottom-[10%]' : 'bottom-10'} w-full flex justify-center items-center`}>
       <ProfileCard
         name="Anubhab Guha"
         title="Software Developer"
