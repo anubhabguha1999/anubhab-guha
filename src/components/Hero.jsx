@@ -5,6 +5,8 @@ import { ComputersCanvas } from "./canvas";
 import { useEffect, useState } from "react";
 import { slideIn } from "../utils/motion";
 import { i } from "maath/dist/index-43782085.esm";
+import ProfileCard from "./ProfileCard";
+import profile from "../assets/projects/profile.png";
 
 const Hero = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -33,7 +35,7 @@ const Hero = () => {
     return (
       <>
         <ComputersCanvas />
-        {isMobile && 
+        {isMobile && (
           <div className="absolute bottom-[9rem] w-full flex justify-center items-center">
             <a href="#about">
               <div className="w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2">
@@ -50,8 +52,8 @@ const Hero = () => {
                 />
               </div>
             </a>
-        </div>
-        }
+          </div>
+        )}
       </>
     );
   };
@@ -76,54 +78,40 @@ const Hero = () => {
           <h1 className={`${styles.heroHeadText} text-white`}>
             Hi, I'm <span className="text-[#915EFF]">Anubhab</span>
           </h1>
-          <p className={`${styles.heroSubText} mt-2 text-white-100`}>
+          <p className={`${styles.heroSubText} mt-2 text-white-100 mb-4`}>
             I'm a full-stack developer with 2+ years experience{" "}
             <br className="sm:block hidden" />
             of using Full Stack Development.
           </p>
-          {isMobile && !isIPhone && (
-            <ul className="list-disc list-inside space-y-2 text-white text-sm sm:text-base font-medium mt-6">
-              <li>
-                🚀 Building seamless full-stack experiences — from beautiful
-                frontends to powerful backends.
-              </li>
-              <li>
-                ⚙️ Turning ideas into scalable, maintainable products with
-                React, Node.js, and modern web technologies.
-              </li>
-              <li>
-                💡 Passionate about performance, clean architecture, and
-                delightful user experiences.
-              </li>
-              <li>
-                🧠 Always learning — exploring emerging tools and frameworks to
-                stay ahead in the tech curve.
-              </li>
-              <li>
-                🤝 Collaborating closely with teams to deliver high-quality
-                software that solves real problems.
-              </li>
-              <li>
-                📦 Writing reusable, testable, and efficient code with a focus
-                on long-term maintainability.
-              </li>
-              <li>
-                🧰 Skilled in debugging and optimizing applications for
-                performance and scalability.
-              </li>
-              <li>
-                🎯 Focused on delivering pixel-perfect UI and intuitive UX
-                across devices.
-              </li>
-              <li>
-                🔐 Emphasizing security best practices in every layer of the
-                stack.
-              </li>
-            </ul>
-          )}
         </div>
       </div>
       {renderContent()}
+      {isMobile && !isIPhone && (
+        <div className="absolute bottom-[9rem] w-full flex justify-center items-center">
+          <ProfileCard
+            name="Anubhab Guha"
+            title="Software Developer"
+            handle="anubhab_guha"
+            status="Online"
+            contactText="Contact Me"
+            avatarUrl={profile}
+            showUserInfo={true}
+            enableTilt={true}
+            onContactClick={() => {
+              if (window.location.hash === "#contact") {
+                history.replaceState(
+                  null,
+                  "",
+                  window.location.pathname + window.location.search
+                );
+              }
+              setTimeout(() => {
+                window.location.hash = "contact";
+              }, 0);
+            }}
+          />
+        </div>
+      )}
     </section>
   );
 };
