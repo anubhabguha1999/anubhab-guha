@@ -23,6 +23,9 @@ import {
   jobit,
   tripguide,
   threejs,
+  manish,
+  mailarappa,
+  ayush,
 } from "../assets";
 import { getImageUrl } from "../components/Works";
 export const navLinks = [
@@ -175,6 +178,7 @@ const testimonials = [
       "I thought it was impossible to make a website as beautiful as our product, but Anubhab proved me wrong.",
     name: "Mailarappa Budhihal",
     designation: "Software Developer",
+    image: mailarappa,
     company: "SoftSensor.ai",
   },
   {
@@ -182,6 +186,7 @@ const testimonials = [
       "I've never met a web developer who truly cares about their clients' success like Anubhab does.",
     name: "Manish Rawat",
     designation: "Software Developer",
+    image: manish,
     company: "SoftSensor.ai",
   },
   {
@@ -189,6 +194,7 @@ const testimonials = [
       "After Anubhab worked his magic on our website, we saw a 43% jump in traffic! His insights and optimizations made a huge difference. Honestly, we couldn’t be more grateful.",
     name: "Ayush Aryan",
     designation: "Software Developer",
+    image: ayush,
     company: "TCS",
   },
 ];
