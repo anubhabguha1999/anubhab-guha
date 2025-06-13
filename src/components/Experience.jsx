@@ -11,6 +11,7 @@ import { styles } from "../styles";
 import { experiences } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
+import SpotlightCard from "./SpotlightCard";
 
 const ExperienceCard = ({ experience }) => {
   return (
@@ -18,7 +19,9 @@ const ExperienceCard = ({ experience }) => {
       contentStyle={{
         background: "#1d1836",
         color: "#fff",
+        p:0,
       }}
+      
       contentArrowStyle={{ borderRight: "7px solid  #232631" }}
       date={experience.date}
       iconStyle={{ background: experience.iconBg }}
@@ -32,12 +35,14 @@ const ExperienceCard = ({ experience }) => {
         </div>
       }
     >
-      <div>
+      <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(0, 166, 255, 0.81)">
+
+      <div className="w-full h-full">
         <h3 className='text-white text-[24px] font-bold'>{experience.title}</h3>
         <p
           className='text-secondary text-[16px] font-semibold'
           style={{ margin: 0 }}
-        >
+          >
           {experience.company_name}
         </p>
       </div>
@@ -45,13 +50,14 @@ const ExperienceCard = ({ experience }) => {
       <ul className='mt-5 list-disc ml-5 space-y-2'>
         {experience.points.map((point, index) => (
           <li
-            key={`experience-point-${index}`}
-            className='text-white-100 text-[14px] pl-1 tracking-wider'
+          key={`experience-point-${index}`}
+          className='text-white-100 text-[14px] pl-1 tracking-wider'
           >
             {point}
           </li>
         ))}
       </ul>
+        </SpotlightCard>
     </VerticalTimelineElement>
   );
 };

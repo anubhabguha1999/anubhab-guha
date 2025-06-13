@@ -5,6 +5,7 @@ import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 import { testimonials } from "../constants";
+import SpotlightCard from "./SpotlightCard";
 
 const FeedbackCard = ({
   index,
@@ -16,8 +17,10 @@ const FeedbackCard = ({
 }) => (
   <motion.div
     variants={fadeIn("", "spring", index * 0.5, 0.75)}
-    className='bg-black-200 p-10 rounded-3xl xs:w-[310px] w-full'
+    className='bg-black-200 rounded-3xl xs:w-[290px] w-full'
   >
+    <SpotlightCard className="custom-spotlight-card h-full border-white bg-black-200" spotlightColor="rgba(0, 166, 255, 0.81)">
+
     <p className='text-white font-black text-[48px]'>"</p>
 
     <div className='mt-1'>
@@ -37,15 +40,17 @@ const FeedbackCard = ({
           src={image}
           alt={`feedback_by-${name}`}
           className='w-10 h-10 rounded-full object-cover'
-        />
+          />
       </div>
     </div>
+          </SpotlightCard>
   </motion.div>
 );
 
 const Feedbacks = () => {
   return (
-    <div className={`mt-12 bg-black-100 rounded-[20px]`}>
+    
+      <SpotlightCard className="custom-spotlight-card mt-12 bg-black-100 rounded-[20px]" spotlightColor="rgba(255, 0, 144, 0.46)">
       <div
         className={`bg-tertiary rounded-2xl ${styles.padding} min-h-[300px]`}
       >
@@ -59,7 +64,7 @@ const Feedbacks = () => {
           <FeedbackCard key={testimonial.name} index={index} {...testimonial} />
         ))}
       </div>
-    </div>
+        </SpotlightCard>
   );
 };
 

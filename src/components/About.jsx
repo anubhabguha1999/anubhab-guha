@@ -12,16 +12,16 @@ const ServiceCard = ({ index, title, icon }) => (
   <Tilt className='xs:w-[250px] w-full'>
     <motion.div
       variants={fadeIn("right", "spring", index * 0.5, 0.75)}
-      className='w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card'
+      className='w-full green-blue-gradient p-[1px] rounded-[20px] shadow-card'
     >
-      <SpotlightCard className="custom-spotlight-card" spotlightColor="rgb(137, 0, 187)">
+      <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(0, 166, 255, 0.81)">
       <div
         options={{
           max: 45,
           scale: 1,
           speed: 450,
         }}
-        className=' rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col'
+        className=' rounded-[20px] py-5 px-12 min-h-[200px] flex justify-evenly items-center flex-col'
         >
         <img
           src={icon}
