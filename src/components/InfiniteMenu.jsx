@@ -835,7 +835,7 @@ const defaultItems = [
 ];
 
 
-export default function InfiniteMenu({ items = [] }) {
+export default function InfiniteMenu({ items = [], isMobile }) {
   const canvasRef = useRef(null);
   const containerRef = useRef(null);
   const [activeItem, setActiveItem] = useState(null);
@@ -904,25 +904,26 @@ export default function InfiniteMenu({ items = [] }) {
         id="infinite-grid-menu-canvas"
         ref={canvasRef}
       />
-
+{!isMobile&& 
       <button
-        onClick={toggleFullscreen}
-        style={{
-          position: 'absolute',
-          top: 16,
-          right: 16,
-          zIndex: 1000,
-          padding: '8px 12px',
-          background: 'rgba(0, 0, 0, 0.5)',
-          color: '#fff',
-          border: 'none',
-          borderRadius: '4px',
-          cursor: 'pointer',
-        }}
+      onClick={toggleFullscreen}
+      style={{
+        position: 'absolute',
+        top: 16,
+        right: 16,
+        zIndex: 1000,
+        padding: '8px 12px',
+        background: 'rgba(0, 0, 0, 0.5)',
+        color: '#fff',
+        border: 'none',
+        borderRadius: '4px',
+        cursor: 'pointer',
+      }}
       >
         {isFullscreen ? '🗗' : '⛶'}
 
       </button>
+    }
 
       {activeItem && (
         <>
