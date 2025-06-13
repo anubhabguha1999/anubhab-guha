@@ -13,7 +13,7 @@ const Contact = () => {
         variants={slideIn("left", "tween", 0.2, 1)}
         className="flex-[0.75] bg-black-100  rounded-2xl shadow-lg border border-gray-700"
         >
-      <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(0, 166, 255, 0.25)">
+      <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(0, 166, 255, 0.81)">
         <p className={styles.sectionSubText}>Get in touch</p>
         <h3 className={styles.sectionHeadText}>Contact.</h3>
         <div className="flex items-center gap-2">
