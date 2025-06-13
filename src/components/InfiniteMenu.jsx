@@ -835,7 +835,6 @@ const defaultItems = [
 ];
 
 export default function InfiniteMenu({ items = [] }) {
-  console.log(items)
   const canvasRef = useRef(null);
   const [activeItem, setActiveItem] = useState(null);
   const [isMoving, setIsMoving] = useState(false);
@@ -881,7 +880,6 @@ export default function InfiniteMenu({ items = [] }) {
       console.log('Internal route:', activeItem.link);
     }
   };
-
   return (
     <div style={{ position: 'relative', width: '100%', height: '100%' }}>
       <canvas

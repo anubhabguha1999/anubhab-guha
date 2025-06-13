@@ -1,5 +1,5 @@
-import React from "react";
-import Tilt from 'react-parallax-tilt';
+import React, { useEffect, useState } from "react";
+import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
@@ -125,7 +125,8 @@ const Works = () => {
       image: getImageUrl("projects/todo.jpg"),
       link: "https://github.com/anubhabguha1999/to-do-list",
       title: "To Do List",
-      description: "To Do List is a project that allows you to manage your tasks",
+      description:
+        "To Do List is a project that allows you to manage your tasks",
     },
     {
       image: getImageUrl("projects/chatbot.jpg"),
@@ -135,6 +136,51 @@ const Works = () => {
         "Personal Chat Bot is a project that creates your personal bot.",
     },
   ];
+  const [isMobile, setIsMobile] = useState(false);
+  const [isIPhone, setIsIPhone] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 768px)");
+    setIsMobile(mediaQuery.matches);
+
+    const handleMediaQueryChange = (event) => {
+      setIsMobile(event.matches);
+    };
+
+    mediaQuery.addEventListener("change", handleMediaQueryChange);
+
+    // Detect if the device is an iPhone
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    const isIphoneDetected = /iPhone/.test(userAgent);
+    setIsIPhone(isIphoneDetected);
+
+    return () => {
+      mediaQuery.removeEventListener("change", handleMediaQueryChange);
+    };
+  }, []);
+  const android = () => {
+    return (
+      <div className="mt-20 flex flex-wrap gap-7">
+        {projects.map((project, index) => (
+          <ProjectCard key={`project-${index}`} index={index} {...project} />
+        ))}
+      </div>
+    );
+  };
+  const iPhone = () => {
+    return (
+      <div style={{ height: "700px", position: "relative", marginTop: "20px" }}>
+        <InfiniteMenu items={items} />
+      </div>
+    );
+  };
+  const renderContent = () => {
+    if (isMobile) {
+      if (isIPhone) {
+        return iPhone();
+      } else return android();
+    } else return iPhone();
+  };
   return (
     <>
       <motion.div variants={textVariant()}>
@@ -154,17 +200,7 @@ const Works = () => {
           and manage projects effectively.
         </motion.p>
       </div>
-      
-
-      <div style={{ height: "700px", position: "relative", marginTop: "20px" }}>
-        <InfiniteMenu items={items} />
-      </div>
-
-      {/* <div className='mt-20 flex flex-wrap gap-7'>
-        {projects.map((project, index) => (
-          <ProjectCard key={`project-${index}`} index={index} {...project} />
-        ))}
-      </div> */}
+      {renderContent()}
     </>
   );
 };
