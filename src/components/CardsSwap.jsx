@@ -11,7 +11,6 @@ import React, {
 import gsap from "gsap";
 import "./CardSwap.css";
 import { motion } from "framer-motion";
-
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 import { styles } from "../styles";
@@ -44,6 +43,19 @@ const CardsSwap = () => {
       mediaQuery.removeEventListener("change", handleMediaQueryChange);
     };
   }, []);
+  const containerRef = useRef(null);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+
+  const toggleFullscreen = () => {
+    const elem = containerRef.current;
+    if (!elem) return;
+
+    if (!document.fullscreenElement) {
+      elem.requestFullscreen().then(() => setIsFullscreen(true));
+    } else {
+      document.exitFullscreen().then(() => setIsFullscreen(false));
+    }
+  };
   if (isMobile) return null;
   return (
     <>
@@ -113,12 +125,30 @@ const CardsSwap = () => {
           </motion.div>
         </div>
       </motion.p>
+      <div
+        ref={containerRef}
+        className={`relative ${
+          isFullscreen ? "fixed inset-0 z-50 bg-black" : "mt-2"
+        }`}
+      >
+        {/* Fullscreen Button */}
+        <button
+          onClick={toggleFullscreen}
+          className="absolute top-3 right-3 z-50 p-2 bg-black/60 text-white rounded-md hover:bg-black/80"
+        >
+          {isFullscreen ? "🗗" : "⛶"}
+        </button>
+
+        {/* SpotlightCard with Spline */}
         <SpotlightCard
-          className="custom-spotlight-card bg-rgba(0, 83, 128, 0.37)  mt-2"
+          className={`custom-spotlight-card ${
+            isFullscreen ? "w-full h-full" : "h-[600px]"
+          }`}
           spotlightColor="rgba(0, 83, 128, 0.37)"
         >
           <Spline scene="https://prod.spline.design/SZtVMfA-wA156hmt/scene.splinecode" />
         </SpotlightCard>
+      </div>
     </>
   );
 };
