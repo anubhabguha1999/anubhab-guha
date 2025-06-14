@@ -66,12 +66,13 @@ const Hero = ({ showCard }) => {
     if (showCard) return card;
     return (
       <>
-        {/* <ComputersCanvas /> */}
-        <div className="absolute bottom-0 left-20 right-0 h-[60%] sm:h-[70%] xs:h-[70%] flex justify-center items-end">
-         <Spline scene="https://prod.spline.design/9JyYvNuZRIYPUX07/scene.splinecode" />
-          {/* <Spline scene="https://prod.spline.design/SZtVMfA-wA156hmt/scene.splinecode" /> */}
-          {/* <Spline scene="https://prod.spline.design/D3mvoh1nifh0Ly0T/scene.splinecode" /> */}
-        </div>
+        {isMobile && isIPhone ? (
+          <div className="absolute bottom-0 left-20 right-0 h-[60%] sm:h-[70%] xs:h-[70%] flex justify-center items-end">
+            <Spline scene="https://prod.spline.design/9JyYvNuZRIYPUX07/scene.splinecode" />
+          </div>
+        ) : (
+          <ComputersCanvas />
+        )}
         {/* {isMobile && (
           <div className="absolute bottom-[9rem] w-full flex justify-center items-center">
             <a href="#about">
