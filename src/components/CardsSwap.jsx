@@ -20,6 +20,8 @@ import { getImageUrl } from "./Works";
 import image from "../assets/feature.jpeg";
 import image1 from "../assets/feature2.png";
 import image2 from "../assets/feature3.png";
+import Spline from "@splinetool/react-spline";
+import SpotlightCard from "./SpotlightCard";
 const CardsSwap = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [isIPhone, setIsIPhone] = useState(false);
@@ -111,6 +113,12 @@ const CardsSwap = () => {
           </motion.div>
         </div>
       </motion.p>
+        <SpotlightCard
+          className="custom-spotlight-card bg-rgba(0, 83, 128, 0.37)  mt-2"
+          spotlightColor="rgba(0, 83, 128, 0.37)"
+        >
+          <Spline scene="https://prod.spline.design/SZtVMfA-wA156hmt/scene.splinecode" />
+        </SpotlightCard>
     </>
   );
 };
