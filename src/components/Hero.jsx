@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Spline from "@splinetool/react-spline";
 
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
@@ -11,10 +12,10 @@ import profile from "../assets/projects/profile.png";
 const Hero = ({ showCard }) => {
   const [isMobile, setIsMobile] = useState(false);
   const [isIPhone, setIsIPhone] = useState(false);
- const showDetails = ()=>{
-    if (isIPhone) return true
+  const showDetails = () => {
+    if (isIPhone) return true;
     return !showCard;
-  }
+  };
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 768px)");
     setIsMobile(mediaQuery.matches);
@@ -36,7 +37,11 @@ const Hero = ({ showCard }) => {
   }, []);
 
   const card = (
-    <div className={`absolute ${!showDetails() ? 'bottom-[10%]' : 'bottom-10'} w-full flex justify-center items-center`}>
+    <div
+      className={`absolute ${
+        !showDetails() ? "bottom-[10%]" : "bottom-10"
+      } w-full flex justify-center items-center`}
+    >
       <ProfileCard
         name="Anubhab Guha"
         title="Software Developer"
@@ -61,7 +66,12 @@ const Hero = ({ showCard }) => {
     if (showCard) return card;
     return (
       <>
-        <ComputersCanvas />
+        {/* <ComputersCanvas /> */}
+        <div className="absolute bottom-0 left-0 right-0 h-[50%] sm:h-[70%] xs:h-[70%] flex justify-center items-end">
+          <Spline scene="https://prod.spline.design/9A64PvC7XUsYdVut/scene.splinecode" />
+          {/* <Spline scene="https://prod.spline.design/SZtVMfA-wA156hmt/scene.splinecode" /> */}
+          {/* <Spline scene="https://prod.spline.design/D3mvoh1nifh0Ly0T/scene.splinecode" /> */}
+        </div>
         {isMobile && (
           <div className="absolute bottom-[9rem] w-full flex justify-center items-center">
             <a href="#about">
@@ -91,31 +101,31 @@ const Hero = ({ showCard }) => {
       } else return null;
     } else return iPhone();
   };
- 
+
   return (
     <section className={`relative w-full h-screen mx-auto`}>
-      {showDetails() && 
-      <div
-        className={`absolute inset-0 top-[80px]  max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
-      >
-        <div className="flex flex-col justify-center items-center mt-2">
-          <div className="w-5 h-5 rounded-full bg-[#915EFF]" />
-          <div className="w-1 sm:h-80 h-40 violet-gradient" />
-        </div>
+      {showDetails() && (
+        <div
+          className={`absolute inset-0 top-[80px]  max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
+        >
+          <div className="flex flex-col justify-center items-center mt-2">
+            <div className="w-5 h-5 rounded-full bg-[#915EFF]" />
+            <div className="w-1 sm:h-80 h-40 violet-gradient" />
+          </div>
 
-        <div>
-          <h1 className={`${styles.heroHeadText} text-white`}>
-            Hi, I'm <span className="text-[#915EFF]">Anubhab</span>
-          </h1>
-          <p className={`${styles.heroSubText} mt-2 text-white-100 mb-4`}>
-            I'm a full-stack developer with 2+ years experience{" "}
-            <br className="sm:block hidden" />
-            of using Full Stack Development. Reach out if you'd like to know
-            more.
-          </p>
+          <div>
+            <h1 className={`${styles.heroHeadText} text-white`}>
+              Hi, I'm <span className="text-[#915EFF]">Anubhab</span>
+            </h1>
+            <p className={`${styles.heroSubText} mt-2 text-white-100 mb-4`}>
+              I'm a full-stack developer with 2+ years experience{" "}
+              <br className="sm:block hidden" />
+              of using Full Stack Development. Reach out if you'd like to know
+              more.
+            </p>
+          </div>
         </div>
-      </div>
-          }
+      )}
       {renderContent()}
       {isMobile && !isIPhone && card}
     </section>
