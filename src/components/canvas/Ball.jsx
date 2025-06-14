@@ -39,7 +39,7 @@ const Ball = (props) => {
 
 const BallCanvas = ({ icon, isAndroid }) => {
   if (isAndroid) {
-   return <div className="w-25 h-25 flex items-center justify-center rounded-full bg-white shadow-md p-2">
+   return <div className="w-25 h-25 flex items-center justify-center rounded-full bg-[#36454F] shadow-[#36454F] shadow-card p-2">
       <img
         src={icon}
         alt="tech icon"
