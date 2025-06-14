@@ -42,7 +42,7 @@ const CardsSwap = () => {
       mediaQuery.removeEventListener("change", handleMediaQueryChange);
     };
   }, []);
-  if (isMobile) return null
+  if (isMobile) return null;
   return (
     <>
       <motion.p
