@@ -51,8 +51,8 @@
 
 .green-blue-gradient {
   background: "#00cea8";
-  background: linear-gradient(90.13deg, #00cea8b1 1.9%, rgba(0, 166, 255, 0.81) 97.5%);
-  background: -webkit-linear-gradient(-90.13deg, #00cea8b1 1.9%, rgba(0, 166, 255, 0.81) 97.5%);
+  background: linear-gradient(90.13deg, #00342a53 1.9%, rgba(0, 75, 115, 0.298) 97.5%);
+  background: -webkit-linear-gradient(-90.13deg, #00342a53 1.9%, rgba(0, 75, 115, 0.298) 97.5%);
 }
 .orange-text-gradient {
   background: #f12711; /* fallback for old browsers */

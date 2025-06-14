@@ -11,9 +11,9 @@ const Contact = () => {
     <div className="xl:mt-12 flex  flex-col-reverse gap-10 overflow-hidden">
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
-        className="flex-[0.75] bg-black-100  rounded-2xl shadow-lg border border-gray-700"
+        className="flex-[0.75]   rounded-2xl shadow-lg "
         >
-      <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(0, 166, 255, 0.81)">
+      <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(0, 166, 255, 0.33)">
         <p className={styles.sectionSubText}>Get in touch</p>
         <h3 className={styles.sectionHeadText}>Contact.</h3>
         <div className="flex items-center gap-2">

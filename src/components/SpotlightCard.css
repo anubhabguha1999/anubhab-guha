@@ -2,7 +2,7 @@
   position: relative;
   border-radius: 1.5rem;
   border: transparent;
-  background-color: #100d25;
+  background-color: transparent;
   padding: 2rem;
   overflow: hidden;
   --mouse-x: 50%;

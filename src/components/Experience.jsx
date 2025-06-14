@@ -17,9 +17,8 @@ const ExperienceCard = ({ experience }) => {
   return (
     <VerticalTimelineElement
       contentStyle={{
-        background: "#1d1836",
-        color: "#fff",
-        p:0,
+        background: 'transparent',
+        // color: "#fff",
       }}
       
       contentArrowStyle={{ borderRight: "7px solid  #232631" }}
@@ -35,9 +34,9 @@ const ExperienceCard = ({ experience }) => {
         </div>
       }
     >
-      <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(0, 166, 255, 0.81)">
+      <SpotlightCard className="custom-spotlight-card bg-black-100 shadow-md " spotlightColor="rgba(0, 166, 255, 0.81)">
 
-      <div className="w-full h-full">
+      <div className="w-full h-full ">
         <h3 className='text-white text-[24px] font-bold'>{experience.title}</h3>
         <p
           className='text-secondary text-[16px] font-semibold'
