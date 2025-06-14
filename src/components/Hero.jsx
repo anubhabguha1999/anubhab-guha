@@ -67,12 +67,12 @@ const Hero = ({ showCard }) => {
     return (
       <>
         {/* <ComputersCanvas /> */}
-        <div className="absolute bottom-0 left-0 right-0 h-[50%] sm:h-[70%] xs:h-[70%] flex justify-center items-end">
+        <div className="absolute bottom-0 left-20 right-0 h-[60%] sm:h-[70%] xs:h-[70%] flex justify-center items-end">
           <Spline scene="https://prod.spline.design/9A64PvC7XUsYdVut/scene.splinecode" />
           {/* <Spline scene="https://prod.spline.design/SZtVMfA-wA156hmt/scene.splinecode" /> */}
           {/* <Spline scene="https://prod.spline.design/D3mvoh1nifh0Ly0T/scene.splinecode" /> */}
         </div>
-        {isMobile && (
+        {/* {isMobile && (
           <div className="absolute bottom-[9rem] w-full flex justify-center items-center">
             <a href="#about">
               <div className="w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2">
@@ -90,7 +90,7 @@ const Hero = ({ showCard }) => {
               </div>
             </a>
           </div>
-        )}
+        )} */}
       </>
     );
   };
