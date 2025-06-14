@@ -119,19 +119,6 @@ const technologies = [
 
 const experiences = [
   {
-    title: "Software Engineer Intern",
-    company_name: "Wipro",
-    icon: starbucks,
-    iconBg: "#383E56",
-    date: "Jan 2023 - June 2023",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
     title: "Software Developer",
     company_name: "Softsensor.ai",
     icon: tesla,
@@ -144,6 +131,19 @@ const experiences = [
       "Conducted thorough code reviews, shared best practices, and mentored team members to maintain code quality and system reliability.",
     ],
   },
+    {
+      title: "Software Engineer Intern",
+      company_name: "Wipro",
+      icon: starbucks,
+      iconBg: "#383E56",
+      date: "Jan 2023 - June 2023",
+      points: [
+        "Developing and maintaining web applications using React.js and other related technologies.",
+        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
+        "Implementing responsive design and ensuring cross-browser compatibility.",
+        "Participating in code reviews and providing constructive feedback to other developers.",
+      ],
+    },
   // {
   //   title: "Web Developer",
   //   company_name: "Shopify",
