@@ -50,50 +50,65 @@ const CardsSwap = () => {
         className="mt-4 text-secondary text-[17px] w-full overflow-hidden"
       >
         <div
-          style={{ height: "500px", position: "relative" }}
+          style={{ height: "600px", position: "relative" }}
           className="w-full flex justify-between md:flex-col"
         >
           <motion.div variants={textVariant()}>
-            <p className={styles.sectionSubText}>Hey This is </p>
-            <h2 className={styles.sectionHeadText}>Anubhab Guha</h2>
-            <p className="max-w-[50%]  text-secondary text-[17px] leading-relaxed">
-              Hey! I’m Anubhab Guha, a passionate full-stack developer with over
-              2 years of hands-on experience in building scalable, user-centric
-              web applications. I specialize in modern frameworks like React and
-              Node.js, and I love turning ideas into elegant digital
-              experiences. Whether it's crafting clean UIs or architecting
-              robust backend systems, I enjoy every part of the development
-              journey.
+            <p className={styles.sectionSubText}>Hey This is</p>
+            <h2 className={styles.sectionHeadText} style={{ color: "#915EFF" }}>
+              ANUBHAB GUHA
+            </h2>
+            <p className="max-w-[50%] text-secondary text-[17px] leading-relaxed">
+              a passionate full-stack developer with over 2 years of hands-on
+              experience in building scalable, user-centric web applications. I
+              specialize in modern frameworks like React and Node.js, and I love
+              turning ideas into elegant digital experiences.
+              <br />
+              <br />
+              My development philosophy is rooted in writing clean, maintainable
+              code and continuously learning new technologies. I’ve worked on
+              diverse projects, from intuitive admin dashboards and real-time
+              messaging platforms to API-first backend systems with strong
+              testing coverage.
+              <br />
+              <br />
+              When I'm not coding, I'm exploring new tools in the JavaScript
+              ecosystem, contributing to open-source, or brainstorming creative
+              product ideas. I'm always excited to connect, collaborate, and
+              create something impactful.
             </p>
           </motion.div>
-          <CardSwap
-            cardDistance={60}
-            verticalDistance={70}
-            delay={5000}
-            pauseOnHover={false}
-          >
-            <Card className="border-none bg-transparent">
-              <img
-                src={image}
-                alt="Frontend Development"
-                className="w-full h-full object-contain"
-              />
-            </Card>
-            <Card className="border-none bg-transparent">
-              <img
-                src={image1}
-                alt="Frontend Development"
-                className="w-full h-full object-contain"
-              />
-            </Card>
-            <Card className="border-none bg-transparent">
-              <img
-                src={image2}
-                alt="Frontend Development"
-                className="w-full h-full object-contain"
-              />
-            </Card>
-          </CardSwap>
+          <motion.div variants={textVariant()}>
+            <CardSwap
+              cardDistance={100}
+              verticalDistance={150}
+              delay={3000}
+              height={700}
+              pauseOnHover={false}
+            >
+              <Card className="border-none bg-transparent p-0">
+                <img
+                  src={image}
+                  alt="Frontend Development"
+                  className="w-full h-full object-contain"
+                />
+              </Card>
+              <Card className="border-none bg-transparent p-0">
+                <img
+                  src={image1}
+                  alt="Frontend Development"
+                  className="w-full h-full object-contain"
+                />
+              </Card>
+              <Card className="border-none bg-transparent p-0">
+                <img
+                  src={image2}
+                  alt="Frontend Development"
+                  className="w-full h-full object-contain"
+                />
+              </Card>
+            </CardSwap>
+          </motion.div>
         </div>
       </motion.p>
     </>
@@ -138,7 +153,7 @@ const CardSwap = ({
   delay = 5000,
   pauseOnHover = false,
   onCardClick,
-  skewAmount = 6,
+  skewAmount = 0,
   easing = "elastic",
   children,
 }) => {

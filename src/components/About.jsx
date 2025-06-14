@@ -14,7 +14,7 @@ const ServiceCard = ({ index, title, icon }) => (
       variants={fadeIn("right", "spring", index * 0.5, 0.75)}
       className='w-full green-blue-gradient p-[1px] rounded-[20px] shadow-card'
     >
-      <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(0, 166, 255, 0.81)">
+      <SpotlightCard className="custom-spotlight-card" spotlightColor={index % 2 === 0 ? "rgb(0, 178, 77)" : "rgba(0, 166, 255, 0.81)"}>
       <div
         options={{
           max: 45,

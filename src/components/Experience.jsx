@@ -34,7 +34,7 @@ const ExperienceCard = ({ experience }) => {
         </div>
       }
     >
-      <SpotlightCard className="custom-spotlight-card bg-black-100 shadow-md " spotlightColor="rgba(0, 166, 255, 0.81)">
+      <SpotlightCard className="custom-spotlight-card bg-black-100 shadow-md " spotlightColor={experience.company_name === 'Softsensor.ai' ? "rgba(255, 0, 144, 0.46)":"rgba(0, 166, 255, 0.61)"}>
 
       <div className="w-full h-full ">
         <h3 className='text-white text-[24px] font-bold'>{experience.title}</h3>
