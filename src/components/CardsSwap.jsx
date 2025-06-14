@@ -128,7 +128,7 @@ const CardsSwap = () => {
       <div
         ref={containerRef}
         className={`relative ${
-          isFullscreen ? "fixed inset-0 z-50 bg-black" : "mt-2"
+          isFullscreen ? "fixed inset-0 z-50 bg-transparent" : "mt-2"
         }`}
       >
         {/* Fullscreen Button */}
