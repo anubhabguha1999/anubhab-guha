@@ -66,7 +66,7 @@ const Hero = ({ showCard }) => {
     if (showCard) return card;
     return (
       <>
-          <div className="absolute bottom-0 left-20 right-0 h-[60%] sm:h-[70%] xs:h-[70%] flex justify-center items-end">
+          <div className="absolute bottom-0 left-20 right-0 h-[60%] sm:h-[60%] xs:h-[60%] flex justify-center items-end">
             <Spline scene="https://prod.spline.design/9JyYvNuZRIYPUX07/scene.splinecode" />
           </div>
           {/* <ComputersCanvas /> */}
