@@ -111,11 +111,24 @@ const technologies = [
 
 const experiences = [
   {
+    title: "Senior Software Developer",
+    company_name: "Softsensor.ai",
+    icon: tesla,
+    iconBg: "#E6DEDD",
+    date: "July 2025 - Present",
+    points: [
+      "Architecting and developing scalable, high-performance full-stack web applications for the Delivery Management System using React.js, Node.js, and modern JavaScript ecosystems.",
+      "Leading design and technical discussions, collaborating with product managers, UI/UX designers, and cross-functional engineering teams to deliver robust, maintainable solutions.",
+      "Driving front-end performance optimization, implementing responsive, accessible, and user-focused UI designs for a seamless user experience across devices.",
+      "Reviewing and refactoring code to uphold engineering best practices, improving system efficiency, and mentoring junior developers to foster technical growth within the team.",
+    ],
+  },
+  {
     title: "Software Developer",
     company_name: "Softsensor.ai",
     icon: tesla,
     iconBg: "#E6DEDD",
-    date: "June 2023 - Present",
+    date: "June 2023 - July 2025",
     points: [
       "Designed, developed, and maintained scalable full stack web applications for a Delivery Management System using React.js, Node.js, and related technologies.",
       "Collaborated closely with designers, product managers, and cross-functional engineering teams to deliver high-quality, end-to-end product features.",
@@ -123,45 +136,19 @@ const experiences = [
       "Conducted thorough code reviews, shared best practices, and mentored team members to maintain code quality and system reliability.",
     ],
   },
-    {
-      title: "Software Engineer Intern",
-      company_name: "Wipro",
-      icon: starbucks,
-      iconBg: "#383E56",
-      date: "Jan 2023 - June 2023",
-      points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
-      ],
-    },
-  // {
-  //   title: "Web Developer",
-  //   company_name: "Shopify",
-  //   icon: shopify,
-  //   iconBg: "#383E56",
-  //   date: "Jan 2022 - Jan 2023",
-  //   points: [
-  //     "Developing and maintaining web applications using React.js and other related technologies.",
-  //     "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-  //     "Implementing responsive design and ensuring cross-browser compatibility.",
-  //     "Participating in code reviews and providing constructive feedback to other developers.",
-  //   ],
-  // },
-  // {
-  //   title: "Full stack Developer",
-  //   company_name: "Meta",
-  //   icon: meta,
-  //   iconBg: "#E6DEDD",
-  //   date: "Jan 2023 - Present",
-  //   points: [
-  //     "Developing and maintaining web applications using React.js and other related technologies.",
-  //     "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-  //     "Implementing responsive design and ensuring cross-browser compatibility.",
-  //     "Participating in code reviews and providing constructive feedback to other developers.",
-  //   ],
-  // },
+  {
+    title: "Software Engineer Intern",
+    company_name: "Wipro",
+    icon: starbucks,
+    iconBg: "#383E56",
+    date: "Jan 2023 - June 2023",
+    points: [
+      "Developing and maintaining web applications using React.js and other related technologies.",
+      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
+      "Implementing responsive design and ensuring cross-browser compatibility.",
+      "Participating in code reviews and providing constructive feedback to other developers.",
+    ],
+  },
 ];
 
 const testimonials = [
@@ -214,15 +201,16 @@ const projects = [
   },
   {
     name: "Speech Emotion Recognition",
-    description: "Speech Emotion Recognition is a project that can detect the emotion of a person based on their speech",
+    description:
+      "Speech Emotion Recognition is a project that can detect the emotion of a person based on their speech",
     tags: [
       { name: "python", color: "green-text-gradient" },
       { name: "ml", color: "pink-text-gradient" },
     ],
     image: getImageUrl("projects/project2.jpg"),
-    source_code_link: "https://github.com/anubhabguha1999/Speech-Emotion-Recognition",
+    source_code_link:
+      "https://github.com/anubhabguha1999/Speech-Emotion-Recognition",
   },
 ];
-
 
 export { services, technologies, experiences, testimonials, projects };
